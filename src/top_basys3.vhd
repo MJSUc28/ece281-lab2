@@ -90,7 +90,7 @@ begin
 	--	Port map: wire your component up to the switches and seven-segment display cathodes
 	-----------------------------------------------------	
 	
-	
+	o_seg_n => seg,
 	-- CONCURRENT STATEMENTS ----------------------------
 	
 	-- wire up active-low 7SD anode (active low) to button (active-high)
