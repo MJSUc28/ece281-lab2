@@ -40,7 +40,7 @@ architecture Behavioral of sevenseg_decoder_tb is
            o_seg_n : out STD_LOGIC_VECTOR (6 downto 0));
    end component sevenseg_decoder;
    
-    signal w_in  : std_logic_vector(3 downto 0) := x"0"; -- the numbers being added
+    signal w_in  : std_logic_vector(3 downto 0) := x"0";
 	signal w_out : std_logic_vector(6 downto 0) := "0000000";
 begin
 	  sevenseg_decoder_uut : sevenseg_decoder port map (
@@ -49,7 +49,6 @@ begin
 	);
 test_process : process 
 	begin
-	   -- Test some inputs
 	   w_in <= "0000"; wait for 10 ns;
 	   w_in <= "0001"; wait for 10 ns;
 	   w_in <= "0010"; wait for 10 ns;
@@ -58,7 +57,15 @@ test_process : process
 	   w_in <= "0101"; wait for 10 ns;
 	   w_in <= "0110"; wait for 10 ns;
 	   w_in <= "0111"; wait for 10 ns;
-		wait; -- wait forever
+	   w_in <= "1000"; wait for 10 ns;
+	   w_in <= "1001"; wait for 10 ns;
+	   w_in <= "1010"; wait for 10 ns;
+	   w_in <= "1011"; wait for 10 ns;
+	   w_in <= "1100"; wait for 10 ns;
+	   w_in <= "1101"; wait for 10 ns;
+	   w_in <= "1110"; wait for 10 ns;
+	   w_in <= "1111"; wait for 10 ns;
+		wait;
 	end process;	
 
 end Behavioral;
